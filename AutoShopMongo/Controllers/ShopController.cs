@@ -31,6 +31,10 @@ namespace AutoShopMongo.API.Controllers
             return await _shopUseCase.CreateShop(_mapper.Map<Shop>(newShop));
         }
 
-
+        [HttpPut]
+        public async Task<Shop> UpdateShopAsync([FromBody] Shop shop)
+        {
+            return await _shopUseCase.UpdateShop(shop);
+        }
     }
 }

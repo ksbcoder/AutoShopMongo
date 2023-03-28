@@ -7,5 +7,6 @@ namespace AutoShopMongo.Domain.UseCases.Gateway
     {
         Task<List<Shop>> GetShops();
         Task<NewShop> CreateShop(Shop shop);
+        Task<Shop> UpdateShop(Shop shop);
     }
 }

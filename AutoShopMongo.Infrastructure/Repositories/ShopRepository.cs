@@ -28,8 +28,15 @@ namespace AutoShopMongo.Infrastructure.Repositories
 
         public async Task<List<Shop>> GetShops()
         {
-            var shops = await shopCollection.FindAsync(shopEntity => true);
+            var shops = await shopCollection.FindAsync(shopEntity => true && shopEntity.State_shop == true);
             return _mapper.Map<List<Shop>>(shops.ToList());
+        }
+
+        public async Task<Shop> UpdateShop(Shop shop)
+        {
+            var shopToUpdate = _mapper.Map<ShopEntity>(shop);
+            var shopUpdated = await shopCollection.FindOneAndReplaceAsync(shopEntity => shopEntity.Shop_id == shop.Shop_id, shopToUpdate);
+            return _mapper.Map<Shop>(shopToUpdate);
         }
     }
 }
