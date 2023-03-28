@@ -13,18 +13,22 @@ namespace AutoShopMongo.Domain.UseCases.UseCases
         {
             _shopRepository = shopRepository;
         }
-        public async Task<NewShop> CreateShop(Shop shop)
-        {
-            return await _shopRepository.CreateShop(shop);
-        }
+
         public async Task<List<Shop>> GetShops()
         {
             return await _shopRepository.GetShops();
         }
-
+        public async Task<NewShop> CreateShop(Shop shop)
+        {
+            return await _shopRepository.CreateShop(shop);
+        }
         public async Task<Shop> UpdateShop(Shop shop)
         {
             return await _shopRepository.UpdateShop(shop);
+        }
+        public async Task<string> DeleteShop(string id)
+        {
+            return await _shopRepository.DeleteShop(id);
         }
     }
 }

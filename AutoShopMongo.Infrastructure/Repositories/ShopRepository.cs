@@ -29,14 +29,39 @@ namespace AutoShopMongo.Infrastructure.Repositories
         public async Task<List<Shop>> GetShops()
         {
             var shops = await shopCollection.FindAsync(shopEntity => true && shopEntity.State_shop == true);
-            return _mapper.Map<List<Shop>>(shops.ToList());
+            var shopsList = _mapper.Map<List<Shop>>(shops.ToList());
+            if (shopsList.Count == 0)
+            {
+                throw new ArgumentException("There aren't shops to show.");
+            }
+            return shopsList;
         }
 
         public async Task<Shop> UpdateShop(Shop shop)
         {
             var shopToUpdate = _mapper.Map<ShopEntity>(shop);
-            var shopUpdated = await shopCollection.FindOneAndReplaceAsync(shopEntity => shopEntity.Shop_id == shop.Shop_id, shopToUpdate);
-            return _mapper.Map<Shop>(shopToUpdate);
+            var shopUpdated = await shopCollection.FindOneAndReplaceAsync(shopEntity => shopEntity.Shop_id == shop.Shop_id
+                    && shopEntity.State_shop == true, shopToUpdate);
+
+            return shopUpdated == null
+                ? throw new ArgumentException($"There isn't a shop with this ID: {shop.Shop_id}.")
+                : _mapper.Map<Shop>(shopToUpdate);
+        }
+
+        public async Task<string> DeleteShop(string id)
+        {
+            var shops = await GetShops();
+            var shopToDelete = shops.FirstOrDefault(shopList => shopList.Shop_id == id);
+            if (shopToDelete != null)
+            {
+                shopToDelete.State_shop = false;
+                await UpdateShop(shopToDelete);
+            }
+            else
+            {
+                throw new ArgumentException($"There isn't a shop with this ID: {id}.");
+            }
+            return $"Delete Successful for ID: {id}";
         }
     }
 }

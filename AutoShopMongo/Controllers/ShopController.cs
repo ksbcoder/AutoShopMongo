@@ -36,5 +36,11 @@ namespace AutoShopMongo.API.Controllers
         {
             return await _shopUseCase.UpdateShop(shop);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<string> DeleteShopAsync(string id)
+        {
+            return await _shopUseCase.DeleteShop(id);
+        }
     }
 }

@@ -8,5 +8,6 @@ namespace AutoShopMongo.Domain.UseCases.Gateway.Repositories
         Task<List<Shop>> GetShops();
         Task<NewShop> CreateShop(Shop shop);
         Task<Shop> UpdateShop(Shop shop);
+        Task<string> DeleteShop(string id);
     }
 }
