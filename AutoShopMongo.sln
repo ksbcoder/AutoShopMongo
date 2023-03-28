@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoShopMongo.API", "AutoShopMongo\AutoShopMongo.API.csproj", "{264B5B83-87C4-4AA0-8737-1D8415ADF134}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoShopMongo.Domain", "AutoShopMongo.Domain\AutoShopMongo.Domain.csproj", "{22611E3A-F6FB-481E-B554-3C5D51EA527A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoShopMongo.Domain.UseCases", "AutoShopMongo.Domain.UseCases\AutoShopMongo.Domain.UseCases.csproj", "{846C671A-2D5D-4861-8D04-C14D71B2546B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoShopMongo.Infrastructure", "AutoShopMongo.Infrastructure\AutoShopMongo.Infrastructure.csproj", "{C0C2BD33-DC22-4EB8-AD2D-5DB58D241806}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{264B5B83-87C4-4AA0-8737-1D8415ADF134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{264B5B83-87C4-4AA0-8737-1D8415ADF134}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{264B5B83-87C4-4AA0-8737-1D8415ADF134}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{264B5B83-87C4-4AA0-8737-1D8415ADF134}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22611E3A-F6FB-481E-B554-3C5D51EA527A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22611E3A-F6FB-481E-B554-3C5D51EA527A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22611E3A-F6FB-481E-B554-3C5D51EA527A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22611E3A-F6FB-481E-B554-3C5D51EA527A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{846C671A-2D5D-4861-8D04-C14D71B2546B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{846C671A-2D5D-4861-8D04-C14D71B2546B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{846C671A-2D5D-4861-8D04-C14D71B2546B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{846C671A-2D5D-4861-8D04-C14D71B2546B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0C2BD33-DC22-4EB8-AD2D-5DB58D241806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0C2BD33-DC22-4EB8-AD2D-5DB58D241806}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0C2BD33-DC22-4EB8-AD2D-5DB58D241806}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0C2BD33-DC22-4EB8-AD2D-5DB58D241806}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C300F145-AF21-4B92-A830-852D67F2FA26}
+	EndGlobalSection
+EndGlobal
